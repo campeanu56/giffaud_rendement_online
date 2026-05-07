@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#9f2632" />
+  <title>Rendement Giffaud - Les Epesses</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <div class="brand-logos">
+          <img src="assets/logo-giffaud.png" alt="Maison Giffaud" class="client-logo client-logo-giffaud" />
+          <img src="assets/logo-agroforce.jpg" alt="AgroForce Prestation" class="client-logo client-logo-afp" />
+        </div>
+        <div class="brand-mix-note">Partenariat Maison Giffaud × AgroForce Prestation</div>
+      </div>
+      <nav id="mainNav" class="nav hidden">
+        <button data-view="dashboard" class="nav-btn active">Tableau de bord</button>
+        <button data-view="saisie" class="nav-btn">Saisie rendement</button>
+        <button data-view="recapjour" class="nav-btn">Récap jour</button>
+        <button data-view="synthese" class="nav-btn">Synthèse finale</button>
+                <button data-view="produits" class="nav-btn admin-only">Liste produits</button>
+        <button data-view="utilisateurs" class="nav-btn admin-only">Utilisateurs</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div id="userInfo" class="user-info hidden"></div>
+        <button id="logoutBtn" class="ghost-btn hidden">Déconnexion</button>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <section id="loginView" class="login-view">
+        <div class="login-card">
+          <div class="login-logos"><img src="assets/logo-giffaud.png" alt="Maison Giffaud" class="login-logo" /><img src="assets/logo-agroforce.jpg" alt="AgroForce Prestation" class="login-logo login-logo-afp" /></div>
+          <h1>Outil rendement hebdomadaire</h1>
+          <p class="muted">Connexion par email et mot de passe, sans lien magique.</p>
+          <label>Email</label>
+          <input id="loginEmail" type="email" autocomplete="username" placeholder="votre@email.fr" />
+          <label>Mot de passe</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Mot de passe" />
+          <button id="loginBtn" class="primary-btn">Se connecter</button>
+          <div id="loginError" class="alert hidden"></div>
+        </div>
+      </section>
+
+      <section id="appView" class="hidden">
+        <header class="topbar">
+          <div>
+            <h1 id="pageTitle">Tableau de bord</h1>
+            <p id="pageSubtitle" class="muted">Maison Giffaud - Les Epesses / AgroForce Prestation</p>
+          </div>
+          <div class="week-selector">
+            <label>Semaine du lundi</label>
+            <input id="weekStart" type="date" />
+            <div id="weekMeta" class="week-meta"></div>
+          </div>
+        </header>
+
+        <div id="messageBox" class="message hidden"></div>
+
+        <section id="dashboard" class="view active-view"></section>
+        <section id="saisie" class="view"></section>
+        <section id="recapjour" class="view"></section>
+        <section id="synthese" class="view"></section>
+                <section id="produits" class="view"></section>
+        <section id="utilisateurs" class="view"></section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
