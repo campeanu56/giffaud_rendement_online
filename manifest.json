@@ -1,0 +1,11 @@
+{
+  "name": "Rendement Giffaud - Les Epesses",
+  "short_name": "Giffaud Rendement",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f8f4ef",
+  "theme_color": "#b53a22",
+  "icons": [
+    { "src": "assets/logo-giffaud.png", "sizes": "248x203", "type": "image/png" }
+  ]
+}
